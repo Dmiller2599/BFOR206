@@ -1,0 +1,27 @@
+#! /bin/bash
+
+# https://www.geeksforgeeks.org/fibonacci-series-bash/
+# Used this site to help understand the Fibonacci formula inside the for loop
+
+# Sets static numbers for both a and b that will change in the loops
+a=0
+b=1
+
+# -n allows a value to be displayed on one line!
+# Everything else I used was the example from class to get this assignment done.
+# (Specifically, the last example called Loop Control)
+
+read -p "What's the closest numbers of the Fibonacci Sequence would you like to see? " LIMIT
+echo -n "$a " #Allows the count to start at 0"
+while [ $a -le $LIMIT ]
+do
+        fn=$((a + b))
+        a=$b
+        b=$fn
+
+        if [ $a -gt $LIMIT ]
+        then
+		break
+        fi
+	echo -n "$a "
+done
